@@ -2,9 +2,8 @@
 
 FILE=$1
 DIR=$(pwd)
-if [ ${FILE##*.} = 'zip' ];then
+if [ ${FILE##*.} = 'zip' -o ${FILE##*.} = 'tar' ];then
 rm $1
 else
-mkdir ~/Escritorio/Compress
-tar -zcvf $DIR.tar.gz ~/Escritorio/Compress/
+tar -czf $FILE.tar $DIR
 fi
